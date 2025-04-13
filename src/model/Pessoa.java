@@ -1,21 +1,23 @@
 package model;
 
 public class Pessoa {
-    private String email;
-    private String nome;
-    private String cpf;
-    private int idade;
-    private Endereco endereco;
+    protected String email;
+    protected String nome;
+    protected String cpf;
+    protected int idade;
+    protected int id;
 
-    public Pessoa(String nome, String email, String cpf, int idade) {
+
+    public Pessoa(String nome, String email, String cpf, int idade,int id) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.idade = idade;
+        this.id = id;
     }
 
     public void descreverUsuario(){
-        System.out.println(nome + "\npossui email: " + email + "\ncom o cpf: " + cpf + "\ne com o idade: " + idade);
+        System.out.println(nome + "\npossui email: " + email + "\ncom o cpf: " + cpf + "\ne com o idade: " + idade + "\ne com id: " + id);
     }
 
     public String getEmail() {
@@ -50,11 +52,13 @@ public class Pessoa {
         this.idade = idade;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public int getId() {
+        return id;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setId(int id) {
+        this.id = id;
     }
+
+
 }
