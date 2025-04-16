@@ -11,9 +11,16 @@ public class Pedido {
     private Endereco endereco;
     private double preco;
 
-    public Pedido(int id, Cliente cliente, Endereco endereco) {
+
+
+    public Pedido() {
+        produtos = new ArrayList<>();
+        preco = calculaPreco();
+    }
+
+
+    public Pedido(int id, Endereco endereco, Cliente cliente) {
         this.id = id;
-        this.cliente = cliente;
         this.endereco = endereco;
         produtos = new ArrayList<>();
         preco = calculaPreco();
@@ -37,8 +44,8 @@ public class Pedido {
     public void adicionarProduto(Produto produto, int quantidade) {
         produtos.add(new ProdutoPedido(produto, quantidade));
     }
-    public void listarProdutos() {
-        System.out.println("Listando produtos:");
+    public void listarProdutos(int indice) {
+        System.out.println("Listando produtos do pedido " + (indice + 1) + " :");
         for (ProdutoPedido produtoPedido : produtos) {
             System.out.println("-------------------------------------");
             System.out.println(produtoPedido.getProduto().getNome());
