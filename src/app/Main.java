@@ -4,12 +4,16 @@ import model.Endereco;
 import model.Estoque;
 import model.Produto;
 import ui.MenuInicial;
+import ui.UserInteraction;
 import users.Cliente;
 
 public class Main {
     public static void main(String[] args) {
-        MenuInicial menu = new MenuInicial();
+        int opcao = 0;
+        UserInteraction userInteraction = new UserInteraction();
+        MenuInicial menuInicial = new MenuInicial();
         Estoque estoque = new Estoque();
+
 
         Endereco endereco = new Endereco();
 
@@ -44,7 +48,24 @@ public class Main {
 
         estoque.listarProdutos();
 
-        menu.ExibirMenuInicial();
+        while(opcao != 3){
+            menuInicial.ExibirMenuInicial();
+            opcao = userInteraction.lerEntradaMenuInicial();
+            if (opcao == 1) {
+                System.out.println("Entrando como cliente");
+            }
+            else if (opcao == 2) {
+                System.out.println("Entrando como administrador");
+            }
+            else if (opcao == 0){
+                System.out.println("O número digitado não está na lista");
+            }
+        }
+        System.out.println("Obrigado por utilizar nosso sistema! :)");
+        System.out.println("Saindo do sistema...");
+
+
+
 
 
 

@@ -15,6 +15,9 @@ public class ValidacaoDeInput {
         do{
             System.out.println(mensagem);
             entrada = scanner.nextLine();
+            if (!tryParseInt(entrada)) {
+                System.out.println("Parece que o que você digitou não é um número. Tente novamente.");
+            }
         }while (tryParseInt(entrada) == false);
         return Integer.parseInt(entrada);
     }
