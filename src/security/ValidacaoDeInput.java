@@ -1,9 +1,12 @@
 package security;
 
+import utilidade.Pausador;
+
 import java.util.Scanner;
 
 public class ValidacaoDeInput {
     private Scanner scanner;
+    private Pausador pausador = new Pausador();
 
     public ValidacaoDeInput(){
         scanner = new Scanner(System.in);
@@ -17,6 +20,7 @@ public class ValidacaoDeInput {
             entrada = scanner.nextLine();
             if (!tryParseInt(entrada)) {
                 System.out.println("Parece que o que você digitou não é um número. Tente novamente.");
+                pausador.esperarSegundos(1);
             }
         }while (tryParseInt(entrada) == false);
         return Integer.parseInt(entrada);
