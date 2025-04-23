@@ -9,8 +9,8 @@ public class Cliente extends Pessoa{
     private ArrayList<Pedido> pedidos;
 
 
-    public Cliente(String nome, String email, String cpf, int idade,int id,Endereco endereco){
-        super(nome, email, cpf, idade, id);
+    public Cliente(String nome, String email, String cpf, int idade,int id,Endereco endereco, String senha){
+        super(nome, email, cpf, idade, id,senha);
         this.endereco = endereco;
         this.pedidos = new ArrayList<>();
     }

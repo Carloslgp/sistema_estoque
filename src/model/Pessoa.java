@@ -6,9 +6,10 @@ public class Pessoa {
     protected String cpf;
     protected int idade;
     protected int id;
+    protected String senha;
 
 
-    public Pessoa(String nome, String email, String cpf, int idade,int id) {
+    public Pessoa(String nome, String email, String cpf, int idade,int id, String senha) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;

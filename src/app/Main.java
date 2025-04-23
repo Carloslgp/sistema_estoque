@@ -3,15 +3,17 @@ package app;
 import model.Endereco;
 import model.Estoque;
 import model.Produto;
+import ui.MenuInicial;
 import users.Cliente;
 
 public class Main {
     public static void main(String[] args) {
+        MenuInicial menu = new MenuInicial();
         Estoque estoque = new Estoque();
 
         Endereco endereco = new Endereco();
 
-        Cliente cliente = new Cliente("Carlos", "carlos@gmail.com", "132-000-800-80", 19, 1, endereco);
+        Cliente cliente = new Cliente("Carlos", "carlos@gmail.com", "132-000-800-80", 19, 1, endereco, "1234");
 
         cliente.descreverUsuario();
 
@@ -41,6 +43,9 @@ public class Main {
         cliente.fecharPedido(1);
 
         estoque.listarProdutos();
+
+        menu.ExibirMenuInicial();
+
 
 
     }
